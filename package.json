@@ -18,6 +18,7 @@
     "react-native-linear-gradient": "^2.8.3",
     "react-native-safe-area-context": "^5.5.2",
     "react-native-screens": "^4.11.1",
+    "react-native-simple-shadow-view": "^1.6.3",
     "react-native-splash-screen": "^3.3.0"
   },
   "devDependencies": {

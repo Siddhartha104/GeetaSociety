@@ -1,11 +1,13 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView, ImageBackground, StatusBar, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <StatusBar translucent backgroundColor="orange" />
       <ImageBackground
         source={require('../../assets/home_background.png')}
@@ -13,27 +15,27 @@ const HomeScreen = () => {
         resizeMode="cover"
       >
         <View style={styles.buttonWrapper}>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('Bhajan')}>
              <LinearGradient
     colors={['#FFD700', '#FFA500']}
     style={styles.button1}
   >
-            <Text style={styles.buttonText}>Bhajan</Text>
+            <Text style={styles.buttonText}>Bhajaan</Text>
             </LinearGradient>
           </TouchableOpacity>
 
-         <TouchableOpacity style={styles.button}>
+         <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('Sloke')}>
              <LinearGradient
     colors={['#FFD700', '#FFA500']}
     style={styles.button1}
   >
-            <Text style={styles.buttonText}>Sloke</Text>
+            <Text style={styles.buttonText}>Slokes</Text>
             </LinearGradient>
           </TouchableOpacity>
 
         </View>
       </ImageBackground>
-    </SafeAreaView>
+    </View>
   );
 };
 

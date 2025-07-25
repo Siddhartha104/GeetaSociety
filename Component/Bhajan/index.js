@@ -1,11 +1,43 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { View, Text, StyleSheet, SafeAreaView, ImageBackground, StatusBar, TouchableOpacity, Platform, Dimensions, Image } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView, ImageBackground, StatusBar,FlatList, TouchableOpacity, Platform, Dimensions, Image } from 'react-native';
 import Shadow from 'react-native-simple-shadow-view';
 
 const BhajanScreen = () =>{
     const navigation = useNavigation();
     const device_h = Dimensions.get('window').height;
+    const DATA = [
+  {
+    title: 'Track name',
+  },
+  {
+    title: 'Track name',
+  },
+  {
+    title: 'Track name',
+  },
+  {
+    title: 'Track name',
+  },
+  {
+    title: 'Track name',
+  },
+  {
+    title: 'Track name',
+  },
+  {
+    title: 'Track name',
+  },
+  {
+    title: 'Track name',
+  },
+  {
+    title: 'Track name',
+  },
+  {
+    title: 'Track name',
+  },
+];
     return(
              <View style={styles.container}>
              <ImageBackground source={require('../../assets/Partern33.jpg')} resizeMode="cover" style={{flex:1,justifyContent:'center'}}>
@@ -109,9 +141,93 @@ const BhajanScreen = () =>{
                 </View>
               </View>
 
-          </View>
+         <View style={{height:'60%',width:'100%',justifyContent:'center',alignItems:'center',marginTop:'5%'}}>
+                  <FlatList
                 
+                 data={DATA}
+                style={{
+                  //marginLeft: '6%',
+                  borderColor:'#b0b0b0',
+                  borderWidth:1,
+                  borderRadius:10,
+                  width: '90%',
+                  height: device_h/4.5,
+                //  backgroundColor: 'white',
 
+                  marginTop: "10%", 
+                  marginBottom: 5,
+                  // ...Platform.select({
+                  //   ios: {
+                  //     shadowColor: 'rgba(0,0,0,0.5)',
+                  //     shadowRadius: 1,
+                  //     shadowOpacity: 0.5,
+                  //     shadowOffset: {
+                  //       width: 0,
+                  //       height: 1,
+                  //     },
+                  //   },
+                  //   android: {
+                  //     elevation: 8,
+                  //   },
+                  // }),
+              }}
+              bounces={true}
+                showsVerticalScrollIndicator={false}
+                //contentContainerStyle={{gap:10}}
+                renderItem={({item, index}) => (
+                  <View style={{alignItems: 'center'}}>
+                    <View
+                      style={{
+                        width: '100%',
+                        borderBottomWidth:0.5,
+                        borderBottomColor:'#b0b0b0',
+                        
+                        
+                        
+                        // backgroundColor: '#FFFFFF',
+                         backgroundColor:'#ffefd5',
+                         height: 60,
+                            padding:10,
+                            justifyContent:'space-between',
+                            alignItems:'center',
+                            flexDirection:'row'
+                      }}>
+                       
+  
+                          
+                            <Text
+                              style={{
+                                color: '#111',
+                                fontFamily: 'Saira-Medium',
+                                marginLeft: 15,
+                              }}>
+                              {item.title}
+                            </Text>
+                            <TouchableOpacity style={{width:50,height:30,justifyContent:'center',alignItems:'center',marginRight:10}}>
+                            <Image
+                      style={{width: 20, height: 25, borderRadius: 5}}
+                      source={
+                        // this.state.playerStatus == 3
+                        //   ? require('./../../assets/pause.png')
+                        //   : this.state.playerStatus == 2
+                          //? 
+                          require('../../assets/play.png')
+                         // : null
+                      }
+                    />
+                    </TouchableOpacity>
+                          
+                         
+                        </View>
+                      
+                     
+                    
+                  </View>
+                )}
+                keyExtractor={(item) => item.id}
+              />
+              </View>
+          </View>
                 </ImageBackground>
                 </View>
            
